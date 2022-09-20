@@ -1,24 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 /**
- * main - generates keygen.
- * Return: 0
+ * main - random password generator for 101-crackme
+ *
+ * Return: always 0
  */
 int main(void)
 {
-	int i = 0, j = 0;
-	time_t t;
+	int i, j, k, s;
+	char c[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char p[58];
 
-	srand((unsigned int) time(&t));
-	while (j < 2772)
+	srand(time(NULL));
+	while (s != 2772)
 	{
-		i = rand() % 128;
-		if ((j + i) > 2772)
-			break;
-		j += i;
-		printf("%c", i);
+		i = k = s = 0;
+		while ((2772 - 122) > s)
+		{
+			j = rand() % 62;
+			p[i] = c[j];
+			s += c[j];
+			i++;
+		}
+		while (c[k])
+		{
+			if (c[k] == (2772 - s))
+			{
+				p[i] = c[k];
+				s += c[k];
+				i++;
+				break;
+			}
+			k++;
+		}
 	}
-	printf("%c\n", (2772 - j));
+	p[i] = '\0';
+	printf("%s", p);
 	return (0);
 }
