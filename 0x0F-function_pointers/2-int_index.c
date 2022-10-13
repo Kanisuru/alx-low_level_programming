@@ -1,4 +1,4 @@
-i#include <stdlib.h>
+#include <stdlib.h>
 
 /**
  * int_index - a function that searches for an integer.
@@ -8,6 +8,7 @@ i#include <stdlib.h>
  * Return: The index of the first element for witch the cmp function
  * does not return 0; -1 if no elements matches or size <= 0.
  */
+
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i = 0;
